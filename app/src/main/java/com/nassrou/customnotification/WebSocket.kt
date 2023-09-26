@@ -1,27 +1,20 @@
 package com.nassrou.customnotification
 
-import android.content.Context
 import android.util.Log
-import androidx.core.app.NotificationCompat
 import io.ktor.client.HttpClient
 import io.ktor.client.plugins.websocket.WebSockets
-import io.ktor.client.plugins.websocket.webSocket
 import io.ktor.client.plugins.websocket.webSocketSession
 import io.ktor.client.request.url
-import io.ktor.http.HttpMethod
 import io.ktor.websocket.Frame
 import io.ktor.websocket.WebSocketSession
 import io.ktor.websocket.readText
-import io.ktor.websocket.send
-import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.flow
-import kotlinx.coroutines.runBlocking
 
 class WebSocket {
 
     companion object {
-        private const val BASE_URL = "ws://192.168.1.8:8080"
+        private const val BASE_URL = "ws://{your_host}"
         private val ktorClient = HttpClient {
             install(WebSockets)
         }
